@@ -30,7 +30,7 @@ function resumeChannel(syncActionName) {
  * @param delayByInterval Number of seconds to delay calling sync
  * @param delayByAction Name of a Redux action to wait for being dispatched before calling sync.
  */
-function* delaySync(delayByInterval, delayByAction) {
+export const delaySync = function* delaySync(delayByInterval, delayByAction) {
   const codePushDelayKey = "CODE_PUSH_DELAY_KEY";
   const key = yield call(AsyncStorage.getItem, codePushDelayKey);
 
@@ -57,7 +57,7 @@ function* delaySync(delayByInterval, delayByAction) {
  *
  * @param options Options to configure when to call sync.
  */
-export default function* codePushSaga(options = {}) {
+export default const codePushSaga = function* codePushSaga(options = {}) {
   options = {
     syncActionName: "SYNC",
     syncOnResume: true,
