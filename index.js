@@ -57,7 +57,7 @@ export const delaySync = function* delaySync(delayByInterval, delayByAction) {
  *
  * @param options Options to configure when to call sync.
  */
-export default const codePushSaga = function* codePushSaga(options = {}) {
+export default codePushSaga = function* codePushSaga(options = {}) {
   options = {
     syncActionName: "SYNC",
     syncOnResume: true,
